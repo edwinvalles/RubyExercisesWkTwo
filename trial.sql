@@ -56,4 +56,52 @@ select first_name, last_name, age
 from students
 order by age desc;
 
+-- new table
+
+create table classrooms (id integer, student_id integer, section varchar);
+
+-- new table data 
+
+insert into classrooms (id, student_id, section)
+values(1,1,"A");
+values(2,2,"A");
+values(3,3,"B");
+values(4,4,"C");
+values(5,5,"B");
+values(6,6,"A");
+values(7,7,"C");
+values(8,8,"B");
+values(9,9,"B");
+values(10,10,"C");
+
+-- inner join
+
+select first_name, last_name, section
+from students s
+inner join classrooms c
+on s.id = c.id;
+
+-- left join
+
+select first_name, last_name, student_id, section
+from students s
+left join classrooms c
+on s.id = c.id;
+
+-- right join
+
+select first_name, last_name, student_id, section
+from students s
+right join classrooms c
+on s.id = c.id;
+
+-- full join
+
+select first_name, last_name, student_id, section
+from students s
+full join classrooms c
+on s.id = c.id;
+
+
+
 
